@@ -1,11 +1,11 @@
 import LoginLayout from '@/components/LoginLayout';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
   };
 
-  return <LoginLayout isLoginPage={true} onFinish={onFinish}></LoginLayout>;
+  return <LoginLayout isLoginPage={false} onFinish={onFinish}></LoginLayout>;
 };
 
-export default LoginPage;
+export default RegisterPage;

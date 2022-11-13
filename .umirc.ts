@@ -25,6 +25,11 @@ export default defineConfig({
       path: '/login',
       component: './Login',
     },
+    {
+      name: 'register',
+      path: '/register',
+      component: './Register',
+    },
   ],
 
   npmClient: 'npm',

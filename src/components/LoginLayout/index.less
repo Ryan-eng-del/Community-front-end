@@ -1,0 +1,81 @@
+/* 容器样式 */
+.auth-form {
+  min-width: 75rem;
+  width: calc;
+  margin: 0 auto;
+  height: 100vh;
+  min-height: 40.125rem;
+  background-color: rgb(240 244 249);
+  padding-top: 20px;
+
+  .auth-wrapper {
+    width: 62.5rem;
+    position: relative;
+    border-radius: 0.8125rem;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 40.125rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+/* 动画 */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+  }
+}
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+  }
+}
+
+/* left-wrapper */
+.auth-wrapper {
+  width: 31.25rem;
+  height: 40.125rem;
+}
+
+.auth-left-wrapper-login {
+  .auth-wrapper();
+  background: url('/img/back-authForm.png') no-repeat center/cover;
+  animation: fadeRight 1s;
+}
+
+.auth-left-wrapper-register {
+  .auth-wrapper();
+  background: url('/img/back-authRegister.png') no-repeat center/cover;
+  animation: fadeRight 1s;
+}
+
+.auth-right-wrapper {
+  .auth-wrapper();
+  padding: 3.125rem 5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeLeft 1s;
+}
+
+.tool-tip {
+  display: flex;
+  justify-content: space-between;
+}
