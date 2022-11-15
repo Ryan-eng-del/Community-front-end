@@ -4,6 +4,30 @@ const users = [
 ];
 
 export default {
+  'POST /api/user/register': (req: any, res: any) => {
+    console.log(req.body);
+    setTimeout(() => {
+      res.status(200);
+      res.json({
+        code: 200,
+        data: { list: users },
+        msg: '注册成功',
+      });
+    }, 1500);
+  },
+
+  'POST /api/user/login': (req: any, res: any) => {
+    console.log(req.body);
+    setTimeout(() => {
+      res.status(200);
+      res.json({
+        code: 200,
+        data: { list: users, token: 'xhzjkjkjrejtjejkjrkjekjrk' },
+        msg: '登录成功',
+      });
+    }, 1500);
+  },
+
   'GET /api/v1/queryUserList': (req: any, res: any) => {
     res.json({
       success: true,

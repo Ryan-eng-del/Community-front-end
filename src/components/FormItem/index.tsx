@@ -7,13 +7,15 @@ interface FormItemProps {
   placeholder: string;
   rules: any[];
   prefix: JSX.Element;
+  defaultValue?: string;
 }
 
 export const FormItem = (props: FormItemProps) => {
-  const { filed, placeholder, rules, prefix } = props;
+  const { filed, placeholder, rules, prefix, defaultValue } = props;
   return (
     <Form.Item name={filed} rules={rules}>
       <Input
+        defaultValue={defaultValue}
         type={filed === 'password' ? 'password' : ''}
         style={{ borderRadius: '0.5rem' }}
         className={classnames(['mb-2', 'h-11'])}
