@@ -12,7 +12,7 @@ import classnames from 'classnames';
 import style from './index.less';
 import { FormItem } from '@/components/FormItem';
 import { Link } from '@umijs/max';
-import LoginSpinner from '../LoingSpinner/index';
+import LoginSpinner from '@/components/LoginSpinner';
 import Cache from '@/utils/cache';
 
 const { Title, Text } = Typography;
@@ -108,8 +108,8 @@ const LoginLayout = (props: LoginLayoutProps) => {
                   rules={[
                     { required: true, message: '昵称不能为空' },
                     {
-                      pattern: /^[\d\w\u4e00-\u9fa5]{2,10}$/,
-                      message: '昵称由2到10个,汉字,数字或者字母组成',
+                      pattern: /^[\d\w\u4e00-\u9fa5]{2,15}$/,
+                      message: '昵称由2到15个,汉字,数字或者字母组成',
                     },
                   ]}
                 ></FormItem>

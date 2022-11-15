@@ -2,9 +2,11 @@ import { useModel } from '@umijs/max';
 import styles from './index.less';
 import { useEffect } from 'react';
 import { openNotification } from '@/components/Notification';
+import { history } from '@umijs/max';
+import { isUserAuth } from '../../utils/auth';
 
 const HomePage = () => {
-  const { userInfo } = useModel('userModel');
+  const { userInfo, dispatchUserAction } = useModel('userModel');
 
   useEffect(() => {
     if (userInfo && userInfo.name) {
@@ -16,6 +18,16 @@ const HomePage = () => {
       );
     }
   }, [userInfo]);
+
+  /* 登录持久化 */
+  useEffect(() => {
+    if (isUserAuth()) {
+      dispatchUserAction({ type: 'userModal/getUserInfo', payload: undefined });
+    } else {
+      history.push('/login');
+    }
+  }, []);
+
   return <div className={styles.container}>{userInfo?.name}</div>;
 };
 

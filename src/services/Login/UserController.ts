@@ -20,9 +20,9 @@ export function useLoginApi() {
     data: loginData,
     loading: loginLoading,
     error: loginError,
-    run,
+    run: login,
   } = useRequest(userLogin, { manual: true });
-  return { loginData, loginLoading, loginError, run };
+  return { loginData, loginLoading, loginError, login };
 }
 
 /* 用户注册 */

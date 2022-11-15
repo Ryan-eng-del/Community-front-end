@@ -24,6 +24,7 @@ export interface ILoginData {
   username: string;
   __v: 0;
   _id: string;
+  token: string;
 }
 
 interface ILoginSuccessResult {

@@ -1,15 +1,22 @@
 import { RequestConfig } from '@umijs/max';
-import { openNotification } from './components/Notification/index';
+import { openNotification } from './components/Notification';
+import { TOKEN_NAME } from './constants';
+import LocalStorageCache from './utils/cache';
 
-// 全局初始化数据配置，用于 Layout 用户信息和权限初始化
-// 更多信息见文档：https://next.umijs.org/docs/api/runtime-config#getinitialstate
 export async function getInitialState(): Promise<{ name: string }> {
   return { name: '@umijs/max' };
 }
 
 export const request: RequestConfig = {
   baseURL: 'http://127.0.0.1:3001',
-  requestInterceptors: [],
+  requestInterceptors: [
+    (config: any) => {
+      config.headers.authorization =
+        LocalStorageCache.getCache(TOKEN_NAME) || '';
+
+      return config;
+    },
+  ],
   responseInterceptors: [
     [
       (response) => {
@@ -18,7 +25,7 @@ export const request: RequestConfig = {
       (error: any) => {
         openNotification(
           error?.response?.data?.msg,
-          'error',
+          'info',
           {
             placement: 'topLeft',
           },

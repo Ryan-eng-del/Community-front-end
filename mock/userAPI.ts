@@ -5,7 +5,6 @@ const users = [
 
 export default {
   'POST /api/user/register': (req: any, res: any) => {
-    console.log(req.body);
     setTimeout(() => {
       res.status(200);
       res.json({
@@ -17,7 +16,6 @@ export default {
   },
 
   'POST /api/user/login': (req: any, res: any) => {
-    console.log(req.body);
     setTimeout(() => {
       res.status(200);
       res.json({

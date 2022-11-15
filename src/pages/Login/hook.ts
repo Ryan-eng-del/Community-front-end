@@ -12,6 +12,7 @@ export const useLogin = () => {
     userInfo,
     fromRegister,
   } = useModel('userModel');
+
   /* 登录逻辑处理 */
   const onFinish = async (
     userLoginInfo: ILoginPage['LoginForm'] & { remember: boolean },
