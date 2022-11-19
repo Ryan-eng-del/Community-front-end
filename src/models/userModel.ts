@@ -13,6 +13,7 @@ export default () => {
   const [fromRegister, setFromRegister] = useState(false);
   const sidRef = useRef('');
   const tokenRef = useRef('');
+
   useEffect(() => {
     const sid = LocalStorageCache.getCache('uuid');
     if (!sid) {

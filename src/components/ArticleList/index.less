@@ -4,20 +4,24 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
 .article-wrapper {
   cursor: pointer;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(230, 230, 230, 1);
   padding-bottom: 12px;
+  margin-bottom: 35px;
 
   .author-info {
     display: flex;
     align-items: center;
     color: rgba(117, 117, 117, 1);
     margin-bottom: 12px;
+
     .nickname {
       color: black;
     }
+
     .point {
       width: 2px;
       height: 2px;
@@ -35,8 +39,10 @@
   .article-info {
     display: flex;
     justify-content: space-between;
+
     .article {
       width: 80%;
+
       .title-wrapper {
         span {
           color: rgba(0, 0, 0, 0.85);
@@ -64,6 +70,8 @@
         -webkit-line-clamp: 4;
       }
     }
+
+
     .article-cover {
       img {
         width: 112px;
@@ -71,4 +79,10 @@
       }
     }
   }
+}
+
+.article-tag-info {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
 }

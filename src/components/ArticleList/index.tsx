@@ -1,11 +1,14 @@
 import { Avatar } from 'antd';
 import classNames from 'classnames';
 import styles from './index.less';
+import TagArticle from '@/components/TagArticle';
+import { CommentOutlined } from '@ant-design/icons';
+
 const ArticleList = () => {
   return (
     <div className={classNames(styles['article-wrapper'])}>
       <div className={classNames(styles['author-info'])}>
-        <Avatar size={'default'} />
+        <Avatar size={'default'} src={'https://joeschmoe.io/api/v1/random'} />
         <span className={styles['nickname']}>Cyan BenJamin</span>
         <span className={classNames(styles['point'])}></span>
         <span className={classNames(styles['post-time'])}>2022-9-9</span>
@@ -46,7 +49,11 @@ const ArticleList = () => {
           <img src="/img/back-authForm.png"></img>
         </div>
       </div>
-      <div className={classNames(styles['article-tag-info'])}></div>
+      <div className={classNames(styles['article-tag-info'])}>
+        <TagArticle tags={['React Hooks', 'Hello World']} />
+        <CommentOutlined />{' '}
+        <span style={{ padding: '2px', fontSize: '12px' }}>278</span>
+      </div>
     </div>
   );
 };

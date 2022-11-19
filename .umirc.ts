@@ -18,7 +18,6 @@ export default defineConfig({
       name: 'home',
       path: '/home',
       component: './Home',
-      wrappers: ['@/wrapper/authRoute'],
     },
 
     {
