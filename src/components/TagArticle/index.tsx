@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const TagStyleArt = styled.div`
-  padding: 2px 8px;
+  padding: 8px 16px;
   transition: background 300ms ease 0s;
   border-radius: 100px;
   font-size: 13px;
@@ -10,6 +10,9 @@ const TagStyleArt = styled.div`
   line-height: 20px;
   display: inline-block;
   margin-right: 10px;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  cursor: pointer;
 
   &:hover {
     background-color: rgb(230, 230, 230);

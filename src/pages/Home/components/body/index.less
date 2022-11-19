@@ -4,6 +4,35 @@
   width: 75%;
   padding: 50px 50px 10px 50px;
 
+  .home-body-left-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    .home-top-input {
+      width: 60%;
+    }
+
+    .home-body-left-sign {
+      width: 20%;
+
+      .home-left-nav {
+        font-size: 12px;
+        display: inline-block;
+        margin-left: 8px;
+        padding: 4px;
+        text-decoration: underline rgb(24, 144, 255);
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(240, 240, 240);
+        }
+      }
+    }
+
+  }
+
   .home-list-top {
     margin-bottom: 12px;
     border-bottom: @home-border-color;
@@ -79,9 +108,48 @@
       font-weight: 600;
       font-size: 20px;
       line-height: 1.4;
-      display: inline-block;
       display: flex;
       flex-direction: column;
     }
+
+
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      background-color: rgb(26, 137, 23);
+      display: inline-block;
+      width: 8px;
+      border-radius: 50%;
+      height: 8px;
+      margin-right: 10px;
+    }
+  }
+
+
+  .home-other {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0 0 15px;
+
+
+    .home-recommend {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+
+    .home-hot {
+      .title {
+        margin-top: 16px;
+      }
+    }
+
   }
 }

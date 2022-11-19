@@ -4,6 +4,7 @@ import styles from './index.less';
 import { isUserAuth } from '@/utils/auth';
 import { useModel } from '@umijs/max';
 import { Link } from '@umijs/renderer-react';
+import TagArticle from '@/components/TagArticle';
 
 const HomeBodyRight = () => {
   const { userInfo } = useModel('userModel');
@@ -44,7 +45,17 @@ const HomeBodyRight = () => {
           </Typography.Text>
         </div>
       </div>
-      <div className={styles['home-other']}>other</div>
+      <div className={styles['home-other']}>
+        <div className={styles['home-recommend']}>
+          <span className={styles['title']}>推荐标签</span>
+          <div>
+            <TagArticle tags={['精华贴', '个人成长', '程序', '校园', '心得']} />
+          </div>
+        </div>
+        <div className={styles['home-hot']}>
+          <span className={styles['title']}>本周热议</span>
+        </div>
+      </div>
     </div>
   );
 };
